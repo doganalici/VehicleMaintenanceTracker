@@ -1,4 +1,4 @@
-<t>🚗 Vehicle Maintenance Tracker – Araç Bakım Takip Sistemi 🚗
+🚗 Vehicle Maintenance Tracker – Araç Bakım Takip Sistemi 🚗
 
 Bu proje, C# ile geliştirilmiş, Nesne Yönelimli Programlama (OOP) prensiplerini temel alan bir araç ve bakım takip uygulamasıdır. Amaç; farklı türde araçları sisteme kaydedebilmek, listeleyebilmek ve araçlara bakım kayıtları ekleyebilmektir.
 
