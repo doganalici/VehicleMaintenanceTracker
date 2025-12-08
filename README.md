@@ -21,11 +21,11 @@ Bu proje, OOP'in temel kavramlarını uygulamalı olarak öğrenmek için geliş
 
 Sisteme iki tip araç eklenebilir:
 
-Car (Araba)
+* Car (Araba)
 
-Kapı sayısı bilgisi içerir
+-- Kapı sayısı bilgisi içerir
 
-DisplayInfo() metodu kendine özgü şekilde çalışır
+-- DisplayInfo() metodu kendine özgü şekilde çalışır
 
 Truck (Kamyon)
 
@@ -117,4 +117,4 @@ VehicleMaintenanceTracker/
 
 ✔ Adım 4: Display & kayıt gösterme altyapısı
 
-⏳ Adım 5: Menü sistemi + kullanıcı etkileşimi (YARIN DEVAM EDİLECEK)
+⏳ Adım 5: Menü sistemi + kullanıcı etkileşimi (DEVAM EDİLECEK)
