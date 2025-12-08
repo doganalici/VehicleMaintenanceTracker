@@ -86,9 +86,10 @@ metotları bulunur.
 
 VehicleManager içerisinde bakım ekleme ve görüntüleme alt yapısı hazırlanmıştır:
 
+```csharp
 public void AddMaintenance(string plate, MaintenanceRecord m) { … }
 public void ShowMaintenance(string plate) { … }
-
+```
 
 📌 Bu özellik geliştirme aşamasındadır.
 
