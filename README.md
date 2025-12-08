@@ -23,15 +23,15 @@ Sisteme iki tip araç eklenebilir:
 
 * Car (Araba)
 
--- Kapı sayısı bilgisi içerir
+--Kapı sayısı bilgisi içerir
 
--- DisplayInfo() metodu kendine özgü şekilde çalışır
+--DisplayInfo() metodu kendine özgü şekilde çalışır
 
-Truck (Kamyon)
+* Truck (Kamyon)
 
-Yük kapasitesi bilgisi içerir
+--Yük kapasitesi bilgisi içerir
 
-DisplayInfo() metodu kendine özgü şekilde çalışır
+--DisplayInfo() metodu kendine özgü şekilde çalışır
 
 Kullanılan OOP Yapıları:
 
