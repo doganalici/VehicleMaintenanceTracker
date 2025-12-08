@@ -23,17 +23,17 @@ Sisteme iki tip araç eklenebilir:
 
 * Car (Araba)
 
---Kapı sayısı bilgisi içerir
+--> Kapı sayısı bilgisi içerir
 
---DisplayInfo() metodu kendine özgü şekilde çalışır
+--> DisplayInfo() metodu kendine özgü şekilde çalışır
 
 * Truck (Kamyon)
 
---Yük kapasitesi bilgisi içerir
+-->Yük kapasitesi bilgisi içerir
 
---DisplayInfo() metodu kendine özgü şekilde çalışır
+--> DisplayInfo() metodu kendine özgü şekilde çalışır
 
-Kullanılan OOP Yapıları:
+📌 Kullanılan OOP Yapıları:
 
 Vehicle (abstract) → ortak özellik ve davranışlar
 
@@ -43,15 +43,15 @@ DisplayInfo() → polymorphism ile her araçta farklı şekilde uygulanır
 
 ✔ 2. VehicleManager — Araç Kaydı Yönetimi
 
-Sınıfın görevleri:
+* Sınıfın görevleri:
 
-Araç ekleme
+--> Araç ekleme
 
-Araç silme
+--> Araç silme
 
-Araç listeleme
+--> Araç listeleme
 
-Ayrıca sistem, aynı plakaya sahip araç eklemeye izin vermez.
+--> Ayrıca sistem, aynı plakaya sahip araç eklemeye izin vermez.
 
 ```csharp
 public void AddVehicle(Vehicle v)
