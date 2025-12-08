@@ -78,9 +78,9 @@ Bu kayıtlar için MaintenanceRecord sınıfı oluşturulmuştur.
 
 Araç üzerinde:
 
-AddRecord()
+-> AddRecord()
 
-ShowRecords()
+-> ShowRecords()
 
 metotları bulunur.
 
