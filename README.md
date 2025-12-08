@@ -170,29 +170,29 @@ classDiagram
     Vehicle --> MaintenanceRecord
 ```
 
-📌 Açıklamalar
-Vehicle (Abstract Class)
+📌 Açıklamalar<br>
+* Vehicle (Abstract Class)
 
-Temel araç özelliklerini içerir.
+-> Temel araç özelliklerini içerir.
 
-DisplayInfo() methodu abstract → alt sınıflar zorunlu olarak override eder.
+-> DisplayInfo() methodu abstract → alt sınıflar zorunlu olarak override eder.
 
-Car ve Truck
+* Car ve Truck
 
-Vehicle sınıfından kalıtım alır.
+-> Vehicle sınıfından kalıtım alır.
 
-Her biri kendine özgü alanlara sahiptir (kapı sayısı, yük kapasitesi).
+-> Her biri kendine özgü alanlara sahiptir (kapı sayısı, yük kapasitesi).
 
-Kendi DisplayInfo formatını uygular.
+-> Kendi DisplayInfo formatını uygular.
 
-MaintenanceRecord
+* MaintenanceRecord
 
-Bir aracın bakım geçmişindeki tek bir kaydı temsil eder.
+-> Bir aracın bakım geçmişindeki tek bir kaydı temsil eder.
 
-VehicleManager
+* VehicleManager
 
-Araç listesi tutar.
+-> Araç listesi tutar.
 
-Araç ekleme, silme, listeleme işlemlerini yapar.
+-> Araç ekleme, silme, listeleme işlemlerini yapar.
 
-Bakım kaydı ekleme ve gösterme operasyonları olacaktır.
+-> Bakım kaydı ekleme ve gösterme operasyonları olacaktır.
