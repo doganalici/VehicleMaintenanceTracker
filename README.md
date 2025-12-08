@@ -53,6 +53,7 @@ Araç listeleme
 
 Ayrıca sistem, aynı plakaya sahip araç eklemeye izin vermez.
 
+```csharp
 public void AddVehicle(Vehicle v)
 {
     foreach (Vehicle vehicle in vehicles)
@@ -63,9 +64,12 @@ public void AddVehicle(Vehicle v)
             return;
         }
     }
+
     vehicles.Add(v);
     Console.WriteLine("Araç başarıyla eklendi :)");
 }
+```
+
 
 ✔ 3. Bakım Kayıt Sistemi (Devam Ediyor)
 
