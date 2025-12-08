@@ -2,21 +2,21 @@
 
 Bu proje, C# ile geliştirilmiş, Nesne Yönelimli Programlama (OOP) prensiplerini temel alan bir araç ve bakım takip uygulamasıdır. Amaç; farklı türde araçları sisteme kaydedebilmek, listeleyebilmek ve araçlara bakım kayıtları ekleyebilmektir.
 
-📌 Projenin Amacı
+📌 Projenin Amacı<br>
 
 Bu proje, OOP'in temel kavramlarını uygulamalı olarak öğrenmek için geliştirilmiştir:
 
-Inheritance (Kalıtım)
+* Inheritance (Kalıtım)
 
-Abstraction (Soyutlama)
+* Abstraction (Soyutlama)
 
-Polymorphism (Çok Biçimlilik)
+* Polymorphism (Çok Biçimlilik)
 
-Encapsulation (Kapsülleme)
+* Encapsulation (Kapsülleme)
 
-Aynı zamanda kullanıcı, LINQ bilmediği için tüm işlemler temel döngüler ve klasik koleksiyon yönetimi ile yazılmıştır.
+* Aynı zamanda kullanıcı, LINQ bilmediği için tüm işlemler temel döngüler ve klasik koleksiyon yönetimi ile yazılmıştır.
 
-🔧 Özellikler
+🔧 Özellikler<br>
 ✔ 1. Araç Yönetimi
 
 Sisteme iki tip araç eklenebilir:
