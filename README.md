@@ -93,15 +93,19 @@ public void ShowMaintenance(string plate) { … }
 
 📌 Bu özellik geliştirme aşamasındadır.
 
-📁 Proje Yapısı
+📁 **Proje Yapısı**
+
+```
 VehicleMaintenanceTracker/
 │
-├── Vehicle.cs            → Soyut temel sınıf
-├── Car.cs                → Car sınıfı
-├── Truck.cs              → Truck sınıfı
-├── VehicleManager.cs     → Araç yönetimi
-├── MaintenanceRecord.cs  → Bakım kayıt modeli
-└── Program.cs            → Test ve konsol menüsü (gelecek adımlarda)
+├── Vehicle.cs              → Soyut temel sınıf
+├── Car.cs                  → Car sınıfı
+├── Truck.cs                → Truck sınıfı
+├── VehicleManager.cs       → Araç yönetimi
+├── MaintenanceRecord.cs    → Bakım kayıt modeli
+└── Program.cs              → Test ve konsol menüsü (gelecek adımlarda)
+```
+
 
 📅 Şu Ana Kadar Tamamlanan Adımlar
 
