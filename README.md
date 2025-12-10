@@ -91,6 +91,29 @@ public void ShowMaintenance(string plate) { … }
 
 📌 Bu özellik geliştirme aşamasındadır.
 
+✔ 4. Menü Sistemi (Program.cs)
+
+Konsol menüsü oluşturulmuştur.
+Şu anda aşağıdaki işlemler tamamlanmış durumda:
+
+→ Case 1: Araç Ekleme
+
+ * Araba / Kamyon seçimi
+
+ * TryParse ile tüm sayısal alanların doğrulanması
+
+ * Girilen bilgilere göre doğru sınıftan nesne oluşturma
+
+ * VehicleManager üzerinden ekleme yapılması
+
+→ Case 2: Araç Listeleme
+
+ * Tüm araçların DisplayInfo() kullanılarak ekrana yazdırılması
+
+ * Kullanıcı için temiz ekran geçişleri ve geri dönüş mesajları
+
+📌 Case 3–5 (Araç Sil, Bakım Ekle, Bakım Göster) kısımları tamamlanacaktır.
+
 📁 **Proje Yapısı**
 
 ```
