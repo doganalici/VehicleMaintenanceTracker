@@ -14,8 +14,6 @@ Bu proje, OOP'in temel kavramlarını uygulamalı olarak öğrenmek için geliş
 
 * Encapsulation (Kapsülleme)
 
-* Aynı zamanda kullanıcı, LINQ bilmediği için tüm işlemler temel döngüler ve klasik koleksiyon yönetimi ile yazılmıştır.
-
 🔧 Özellikler<br>
 ✔ 1. Araç Yönetimi
 
