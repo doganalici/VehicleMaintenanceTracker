@@ -138,7 +138,7 @@ VehicleMaintenanceTracker/
 
 ✔ Adım 4: Display & kayıt gösterme altyapısı
 
-✔ Adım 5: Menü – Case 1 ve Case 2 işlemleri tamamlandı
+✔ Adım 5: Menü – Case 1 ve Case 2 işlemleri tamamlandı<br>
 ⏳ Case 3, 4 ve 5 – DEVAM EDİLECEK
 
 -----------------------------------------------------------------------------------------------
