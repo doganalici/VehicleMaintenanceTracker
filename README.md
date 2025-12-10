@@ -103,7 +103,7 @@ VehicleMaintenanceTracker/
 ├── Truck.cs                → Truck sınıfı
 ├── VehicleManager.cs       → Araç yönetimi
 ├── MaintenanceRecord.cs    → Bakım kayıt modeli
-└── Program.cs              → Test ve konsol menüsü (gelecek adımlarda)
+└── Program.cs              → Konsol menüsü ve işlem akışı (gelecek adımlarda devam edecektir)
 ```
 
 
