@@ -21,5 +21,15 @@ namespace VehicleMaintenanceTracker
                 $"Kapı Sayısı : {Door}\n");
             Console.WriteLine("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
         }
+        public Car(int id, string plate, string brand, string model, string color, int year, int door)
+        {
+            Id = id;
+            Plate = plate;
+            Brand = brand;
+            Model = model;
+            Color = color;
+            Year = year;
+            Door = door;
+        }
     }
 }

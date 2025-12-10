@@ -21,5 +21,15 @@ namespace VehicleMaintenanceTracker
                  $"Yük kapasitesi : {LoadCapacity} KG\n");
             Console.WriteLine("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
         }
+        public Truck(int id, string plate, string brand, string model, string color, int year, int loadCapacity)
+        {
+            Id = id;
+            Plate = plate;
+            Brand = brand;
+            Model = model;
+            Color = color;
+            Year = year;
+            LoadCapacity = loadCapacity;
+        }
     }
 }

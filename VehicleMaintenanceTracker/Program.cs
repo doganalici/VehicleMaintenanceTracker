@@ -10,7 +10,134 @@ namespace VehicleMaintenanceTracker
     {
         static void Main(string[] args)
         {
+            bool state = true;
+            Console.WriteLine("\tARAÇ BAKIM TAKİP SİSTEMİ");
+            VehicleManager manager = new VehicleManager();
 
+            while (state)
+            {
+                Console.WriteLine("Lütfen menüden bir tuşlama yapınız");
+                Console.WriteLine("1 - Araç Ekle\n" +
+                    "2 - Araçları Listele\n" +
+                    "3 - Araç Sil\n" +
+                    "4 - Bakım Ekle\n" +
+                    "5 - Bakım Geçmişini Göster\n" +
+                    "6 - Çıkış\n" +
+                    "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n ");
+                Console.Write("Seçiminiz : ");
+                int option;
+                while (!int.TryParse(Console.ReadLine(), out option))
+                {
+                    Console.Write("Hatalı giriş! Lütfen sayı giriniz: ");
+                }
+                switch (option)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("ARAÇ EKLE");
+                        Console.WriteLine("---------------");
+                        Console.WriteLine("Eklemek istediğiniz araç tipi nedir?\n" +
+                            "1 - Araba\n" +
+                            "2 - Kamyon\n");
+                        Console.Write("Seçiminiz : ");
+                        int carType;
+                        while (!int.TryParse(Console.ReadLine(), out carType))
+                        {
+                            Console.Write("Hatalı giriş! Lütfen sayı giriniz: ");
+                        }
+                        if (carType == 1 || carType == 2)
+                        {
+
+
+                            Console.Write("Id : ");
+                            int id;
+                            while (!int.TryParse(Console.ReadLine(), out id))
+                            {
+                                Console.Write("Hatalı giriş! Lütfen sayı giriniz: ");
+                            }
+
+                            Console.Write("Plaka : ");
+                            string plate = Console.ReadLine();
+
+                            Console.Write("Marka : ");
+                            string brand = Console.ReadLine();
+
+                            Console.Write("Model : ");
+                            string model = Console.ReadLine();
+
+                            Console.Write("Renk : ");
+                            string color = Console.ReadLine();
+
+                            Console.Write("Yıl : ");
+                            int year;
+                            while (!int.TryParse(Console.ReadLine(), out year))
+                            {
+                                Console.Write("Hatalı giriş! Lütfen sayı giriniz: ");
+                            }
+
+                            Vehicle newVehicle = null;
+                            if (carType == 1)
+                            {
+                                Console.Write("Kapı Sayısı : ");
+                                int door;
+                                while (!int.TryParse(Console.ReadLine(), out door))
+                                {
+                                    Console.Write("Hatalı giriş! Lütfen sayı giriniz: ");
+                                }
+                                newVehicle = new Car(id, plate, brand, model, color, year, door);
+
+                            }
+                            else if (carType == 2)
+                            {
+                                Console.Write("Yük Kapasitesi : ");
+                                int loadCapacity;
+                                while (!int.TryParse(Console.ReadLine(), out loadCapacity))
+                                {
+                                    Console.Write("Hatalı giriş! Lütfen sayı giriniz: ");
+                                }
+                                newVehicle = new Truck(id, plate, brand, model, color, year, loadCapacity);
+                            }
+
+                            manager.AddVehicle(newVehicle);
+                            Console.Clear();
+                            Console.WriteLine("Araç başarıyla eklendi.\n");
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Hatalı tuşlama yaptınız!!!\n");
+                            break;
+                        }
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("ARAÇLARI LİSTELE");
+                        Console.WriteLine("-----------------");
+                        manager.ListVehicles();
+                        Console.WriteLine("\nİşlem tamamlandı.Devam etmek için bir tuşa basınız...");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    case 3:
+                        Console.WriteLine("ARAÇ SİL");
+                        break;
+                    case 4:
+                        Console.WriteLine("BAKIM EKLE");
+                        break;
+                    case 5:
+                        Console.WriteLine("BAKIM GEÇMİŞİNİ GÖSTER");
+                        break;
+                    case 6:
+                        Console.Write("Çıkış yapılıyor. Lütfen bir tuşa basınız");
+                        Console.ReadKey();
+                        state = false;
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Menü dışındaki bir rakam tuşlaması yaptınız. Lütfen tekrar deneyin!!!\n");
+                        break;
+                }
+            }
         }
     }
 }

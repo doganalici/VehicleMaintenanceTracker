@@ -47,9 +47,15 @@ namespace VehicleMaintenanceTracker
 
         public void ListVehicles()
         {
+            if (vehicles.Count==0)
+            {
+                Console.WriteLine("Kayıtlı araç bulunmamaktadır!");
+                return;
+            }
             foreach (var v in vehicles)
             {
                 v.DisplayInfo();
+                Console.WriteLine("-------------------");
             }
 
         }
