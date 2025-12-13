@@ -31,12 +31,12 @@ namespace VehicleMaintenanceTracker
                 Console.WriteLine("Bu araç için bakım kaydı yok !!!");
                 return;
             }
-            Console.WriteLine($"-- {Plate} plakalı aracın bakım geçmişi --");
+            Console.WriteLine($"\n-- {Plate} plakalı aracın bakım geçmişi --\n");
             foreach (var r in records)
             {
                 r.Display();
             }
-            Console.WriteLine("----------------------------------------");
+            
         }
     }
 }

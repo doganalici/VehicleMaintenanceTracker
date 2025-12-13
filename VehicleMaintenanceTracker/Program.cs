@@ -98,14 +98,27 @@ namespace VehicleMaintenanceTracker
                                 newVehicle = new Truck(id, plate, brand, model, color, year, loadCapacity);
                             }
 
-                            manager.AddVehicle(newVehicle);
                             Console.Clear();
-                            Console.WriteLine("Araç başarıyla eklendi.\n");
+                            bool added = manager.AddVehicle(newVehicle);
+                            if (added)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Araç başarıyla eklendi.\n");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Araç eklenemedi. Devam etmek için bir tuşa basınız...");
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
                         }
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("Hatalı tuşlama yaptınız!!!\n");
+                            Console.WriteLine("Hatalı tuşlama yaptınız!!!");
+                            Console.WriteLine("Devam etmek için bir tuşa basınız...");
+                            Console.ReadKey();
+                            Console.Clear();
                             break;
                         }
                         break;
@@ -114,22 +127,68 @@ namespace VehicleMaintenanceTracker
                         Console.WriteLine("ARAÇLARI LİSTELE");
                         Console.WriteLine("-----------------");
                         manager.ListVehicles();
-                        Console.WriteLine("\nİşlem tamamlandı.Devam etmek için bir tuşa basınız...");
+                        Console.WriteLine("Devam etmek için bir tuşa basınız...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
                     case 3:
+                        Console.Clear();
                         Console.WriteLine("ARAÇ SİL");
+                        Console.WriteLine("-----------------");
+                        Console.Write("Silmek istediğiniz plakayı yazınız : ");
+                        string removePlate = Console.ReadLine();
+                        manager.RemoveVehicle(removePlate);
+                        Console.WriteLine("Devam etmek için bir tuşa basınız");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 4:
+                        Console.Clear();
                         Console.WriteLine("BAKIM EKLE");
+                        Console.WriteLine("-----------------");
+                        Console.Write("Bakıma eklenecek arabanın plakasını yazınız : ");
+                        string maintenancePlate = Console.ReadLine();
+                        if (!manager.IsVehicleExists(maintenancePlate))
+                        {
+                            Console.WriteLine("Araç bulunamadı!");
+                            Console.WriteLine("Devam etmek için bir tuşa basınız...");
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        }
+                        Console.Write("Tarih giriniz (GG.AA.YYYY) : ");
+                        DateTime maintenanceDate;
+                        while (!DateTime.TryParse(Console.ReadLine(), out maintenanceDate))
+                        {
+                            Console.Write("Hatalı giriş! Lütfen geçerli bir tarih giriniz: ");
+                        }
+                        Console.Write("Açıklama giriniz : ");
+                        string maintenanceExplanation = Console.ReadLine();
+                        Console.Write("Ücret giriniz (TL) : ");
+                        int maintenancePayment;
+                        while (!int.TryParse(Console.ReadLine(), out maintenancePayment))
+                        {
+                            Console.Write("Hatalı giriş! Lütfen geçerli bir tutar giriniz: ");
+                        }
+                        MaintenanceRecord maintenanceRecord = new MaintenanceRecord(maintenanceDate, maintenanceExplanation, maintenancePayment);
+                        manager.AddMaintenance(maintenancePlate, maintenanceRecord);
+                        Console.WriteLine("Devam etmek için bir tuşa basınız");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 5:
+                        Console.Clear();
                         Console.WriteLine("BAKIM GEÇMİŞİNİ GÖSTER");
+                        Console.WriteLine("-----------------");
+                        Console.Write("Bakım geçmişi gösterilecek arabanın plakasını yazınız : ");
+                        string showMaintenance = Console.ReadLine();
+                        manager.ShowMaintenance(showMaintenance);
+                        Console.WriteLine("Devam etmek için bir tuşa basınız");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 6:
                         Console.Write("Çıkış yapılıyor. Lütfen bir tuşa basınız");
-                        Console.ReadKey();
                         state = false;
                         break;
                     default:

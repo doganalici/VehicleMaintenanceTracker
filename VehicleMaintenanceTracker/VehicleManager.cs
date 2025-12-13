@@ -9,18 +9,29 @@ namespace VehicleMaintenanceTracker
     public class VehicleManager
     {
         List<Vehicle> vehicles = new List<Vehicle>();
-        public void AddVehicle(Vehicle v)
+        public bool AddVehicle(Vehicle v)
         {
+            if (v == null)
+            {
+                Console.WriteLine("Araç oluşturulamadı! ");
+                return false;
+            }
             foreach (Vehicle vehicle in vehicles)
             {
+                if (vehicle.Id == v.Id)
+                {
+                    Console.WriteLine($"{vehicle.Id} numaralı Id zaten kayıtlı !!!");
+                    return false;
+                }
                 if (vehicle.Plate == v.Plate)
                 {
-                    Console.WriteLine("Bu plakada bir araç zaten kayıtlı !!!");
-                    return;
+                    Console.WriteLine($"{vehicle.Plate} plakasında bir araç zaten kayıtlı !!!");
+                    return false;
                 }
             }
             vehicles.Add(v);
-            Console.WriteLine("Araç başarıyla eklendi :)");
+            return true;
+            //Console.WriteLine("Araç başarıyla eklendi :)");
         }
         public void RemoveVehicle(string plate)
         {
@@ -37,17 +48,17 @@ namespace VehicleMaintenanceTracker
             if (vehicleToRemove != null)
             {
                 vehicles.Remove(vehicleToRemove);
-                Console.WriteLine("Araç başarıyla silindi.");
+                Console.WriteLine($"{plate} Plakalı araç başarıyla silindi.\n");
             }
             else
             {
-                Console.WriteLine("Araç bulunamadı.");
+                Console.WriteLine("Bu plakada bir araç bulunamadı.\n");
             }
         }
 
         public void ListVehicles()
         {
-            if (vehicles.Count==0)
+            if (vehicles.Count == 0)
             {
                 Console.WriteLine("Kayıtlı araç bulunmamaktadır!");
                 return;
@@ -82,6 +93,17 @@ namespace VehicleMaintenanceTracker
             Console.WriteLine("Bakım kaydı eklendi.");
         }
 
+        public bool IsVehicleExists(string plate)
+        {
+            foreach (var v in vehicles)
+            {
+                if (v.Plate == plate)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public void ShowMaintenance(string plate)
         {
             Vehicle found = null;
