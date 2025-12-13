@@ -105,26 +105,98 @@ Konsol menüsü oluşturulmuştur.
  * Girilen bilgilere göre doğru sınıftan nesne oluşturma
 
  * VehicleManager üzerinden ekleme yapılması
-
+<hr>
 → Case 2: Araç Listeleme
 
  * Tüm araçların DisplayInfo() kullanılarak ekrana yazdırılması
 
  * Kullanıcı için temiz ekran geçişleri ve geri dönüş mesajları
+<hr>
+→ Case 3: Araç Silme (Tamamlandı)
 
-📌 Case 3–5 (Araç Sil, Bakım Ekle, Bakım Göster) kısımları tamamlanacaktır.
+ * Araç silme işlemi plaka bilgisine göre yapılmaktadır.
 
+ * Girilen plaka sistemde varsa araç listeden kaldırılır.
+
+ * Araç bulunamazsa kullanıcı bilgilendirilir.
+
+📌 Silme işlemi VehicleManager içerisinde yönetilmektedir.
+<hr>
+→ Case 4: Bakım Ekleme (Tamamlandı – Geliştirilmiş Akış)
+
+ * Bakım ekleme süreci kullanıcı deneyimi dikkate alınarak iyileştirilmiştir:
+
+ * Önce plaka bilgisi alınır
+
+ * Plaka sistemde yoksa:
+
+   - Diğer alanlar (tarih, açıklama, ücret) hiç sorulmaz
+
+   - “Araç bulunamadı” mesajı gösterilir
+
+ * Plaka varsa:
+
+   - Tarih bilgisi DateTime.TryParse ile doğrulanır
+
+   - Açıklama bilgisi alınır
+
+   - Ücret bilgisi int.TryParse ile kontrol edilir
+
+   - Bakım kaydı ilgili araca eklenir
+
+Bu yapı sayesinde:
+
+* Gereksiz veri girişi engellenmiştir
+
+* Hatalı kullanıcı akışı önlenmiştir
+<hr>
+→  Case 5: Bakım Geçmişini Gösterme
+
+ * Kullanıcıdan plaka bilgisi alınır
+
+ * Araç bulunursa:
+
+   - O araca ait tüm bakım kayıtları listelenir
+
+ * Araç bulunamazsa:
+
+   - Bilgilendirici mesaj gösterilir
+
+Bakım kayıtları araç bazlı tutulduğu için her araç kendi geçmişini ayrı ayrı gösterir.
+<hr>
 📁 **Proje Yapısı**
 
 ```
 VehicleMaintenanceTracker/
 │
-├── Vehicle.cs              → Soyut temel sınıf
-├── Car.cs                  → Car sınıfı
-├── Truck.cs                → Truck sınıfı
-├── VehicleManager.cs       → Araç yönetimi
-├── MaintenanceRecord.cs    → Bakım kayıt modeli
-└── Program.cs              → Konsol menüsü ve işlem akışı (gelecek adımlarda devam edecektir)
+├── Vehicle.cs
+│   → Soyut (abstract) temel sınıf
+│   → Ortak araç özellikleri (Id, Plate, Brand, Model, Color, Year)
+│   → DisplayInfo() abstract metodu
+│
+├── Car.cs
+│   → Vehicle sınıfından türetilmiştir
+│   → Door (Kapı Sayısı) özelliği içerir
+│   → DisplayInfo() override edilmiştir
+│
+├── Truck.cs
+│   → Vehicle sınıfından türetilmiştir
+│   → LoadCapacity (Yük Kapasitesi) özelliği içerir
+│   → DisplayInfo() override edilmiştir
+│
+├── MaintenanceRecord.cs
+│   → Bir araca ait tek bir bakım kaydını temsil eder
+│   → Date (DateTime), Description, Cost alanlarını içerir
+│
+├── VehicleManager.cs
+│   → Araç listesini yönetir
+│   → Araç ekleme, silme, listeleme işlemleri
+│   → Bakım ekleme ve bakım geçmişi gösterme işlemleri
+│
+└── Program.cs
+    → Konsol menüsü
+    → Kullanıcıdan veri alma ve akış kontrolü
+    → Case 1–5 işlemleri tamamen çalışır durumdadır
 ```
 
 
@@ -138,8 +210,17 @@ VehicleMaintenanceTracker/
 
 ✔ Adım 4: Display & kayıt gösterme altyapısı
 
-✔ Adım 5: Menü – Case 1 ve Case 2 işlemleri tamamlandı<br>
-⏳ Case 3, 4 ve 5 – DEVAM EDİLECEK
+✔ Adım 5: Menü sistemi (Program.cs)
+
+ * Case 1: Araç Ekleme
+
+ * Case 2: Araç Listeleme
+
+ * Case 3: Araç Silme
+
+ * Case 4: Bakım Ekleme
+
+ * Case 5: Bakım Geçmişini Gösterme
 
 -----------------------------------------------------------------------------------------------
 
