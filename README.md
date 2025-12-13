@@ -14,8 +14,6 @@ Bu proje, OOP'in temel kavramlarını uygulamalı olarak öğrenmek için geliş
 
 * Encapsulation (Kapsülleme)
 
-* Aynı zamanda kullanıcı, LINQ bilmediği için tüm işlemler temel döngüler ve klasik koleksiyon yönetimi ile yazılmıştır.
-
 🔧 Özellikler<br>
 ✔ 1. Araç Yönetimi
 
@@ -93,6 +91,29 @@ public void ShowMaintenance(string plate) { … }
 
 📌 Bu özellik geliştirme aşamasındadır.
 
+✔ 4. Menü Sistemi (Program.cs)
+
+Konsol menüsü oluşturulmuştur.
+Şu anda aşağıdaki işlemler tamamlanmış durumda:
+
+→ Case 1: Araç Ekleme
+
+ * Araba / Kamyon seçimi
+
+ * TryParse ile tüm sayısal alanların doğrulanması
+
+ * Girilen bilgilere göre doğru sınıftan nesne oluşturma
+
+ * VehicleManager üzerinden ekleme yapılması
+
+→ Case 2: Araç Listeleme
+
+ * Tüm araçların DisplayInfo() kullanılarak ekrana yazdırılması
+
+ * Kullanıcı için temiz ekran geçişleri ve geri dönüş mesajları
+
+📌 Case 3–5 (Araç Sil, Bakım Ekle, Bakım Göster) kısımları tamamlanacaktır.
+
 📁 **Proje Yapısı**
 
 ```
@@ -103,7 +124,7 @@ VehicleMaintenanceTracker/
 ├── Truck.cs                → Truck sınıfı
 ├── VehicleManager.cs       → Araç yönetimi
 ├── MaintenanceRecord.cs    → Bakım kayıt modeli
-└── Program.cs              → Test ve konsol menüsü (gelecek adımlarda)
+└── Program.cs              → Konsol menüsü ve işlem akışı (gelecek adımlarda devam edecektir)
 ```
 
 
@@ -117,7 +138,8 @@ VehicleMaintenanceTracker/
 
 ✔ Adım 4: Display & kayıt gösterme altyapısı
 
-⏳ Adım 5: Menü sistemi + kullanıcı etkileşimi (DEVAM EDİLECEK)
+✔ Adım 5: Menü – Case 1 ve Case 2 işlemleri tamamlandı<br>
+⏳ Case 3, 4 ve 5 – DEVAM EDİLECEK
 
 -----------------------------------------------------------------------------------------------
 
