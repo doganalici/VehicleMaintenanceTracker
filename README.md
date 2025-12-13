@@ -52,20 +52,29 @@ DisplayInfo() → polymorphism ile her araçta farklı şekilde uygulanır
 --> Ayrıca sistem, aynı plakaya sahip araç eklemeye izin vermez.
 
 ```csharp
-public void AddVehicle(Vehicle v)
-{
-    foreach (Vehicle vehicle in vehicles)
-    {
-        if (vehicle.Plate == v.Plate)
+public bool AddVehicle(Vehicle v)
         {
-            Console.WriteLine("Bu plakada bir araç zaten kayıtlı !!!");
-            return;
+            if (v == null)
+            {
+                Console.WriteLine("Araç oluşturulamadı! ");
+                return false;
+            }
+            foreach (Vehicle vehicle in vehicles)
+            {
+                if (vehicle.Id == v.Id)
+                {
+                    Console.WriteLine($"{vehicle.Id} numaralı Id zaten kayıtlı !!!");
+                    return false;
+                }
+                if (vehicle.Plate == v.Plate)
+                {
+                    Console.WriteLine($"{vehicle.Plate} plakasında bir araç zaten kayıtlı !!!");
+                    return false;
+                }
+            }
+            vehicles.Add(v);
+            return true;
         }
-    }
-
-    vehicles.Add(v);
-    Console.WriteLine("Araç başarıyla eklendi :)");
-}
 ```
 
 
