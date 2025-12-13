@@ -98,8 +98,6 @@ public void AddMaintenance(string plate, MaintenanceRecord m) { … }
 public void ShowMaintenance(string plate) { … }
 ```
 
-📌 Bu özellik geliştirme aşamasındadır.
-
 ✔ 4. Menü Sistemi (Program.cs)
 
 Konsol menüsü oluşturulmuştur.
